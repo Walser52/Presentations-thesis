@@ -1,0 +1,132 @@
+:::{.navbar}
+
+[Workflow]{.nav-option data-option="option1" onclick="showContent(this)"}
+[DFT results]{.nav-option data-option="option2" onclick="showContent(this)"}
+[Trends]{.nav-option data-option="option3" onclick="showContent(this)"}
+[Metal analysis]{.nav-option data-option="option4" onclick="showContent(this)"}
+[Linker analysis]{.nav-option data-option="option5" onclick="showContent(this)"}
+[ML model]{.nav-option data-option="option6" onclick="showContent(this)"}
+
+:::
+
+
+:::{#option1Content .content}
+
+::::{.columns}
+:::{.column}
+
+- 8,500 materials 
+- DFT calculations using Quantum Espresso
+- Cheminformatic libraries (RDKit, pymatgen, matminer)
+
+:::
+:::{.column}
+
+![The complete workflow](../_figs/workflow2.png){#fig-workflow width=700}
+
+:::
+::::
+
+
+:::
+
+:::{#option2Content .content}
+
+::::{.columns}
+:::{.column}
+
+- Conductivity of MOFs reveals a bimodal distribution (Top) 
+- Gaussian mixture model used to fit the data (Bottom) 
+- Bimodality partly due to open shells (Inset)
+
+:::
+:::{.column}
+
+![Results of DFT calculations](../_figs/fig_CondResults.png){#fig-condres width=700}
+
+:::
+::::
+
+
+:::
+
+:::{#option3Content .content}
+
+
+::: {.panel-tabset}
+#### Features
+![Density plot between bandgaps and conductivity](../_figs/fig_bandgap_v_condbin.png){#fig-bgbin width=600}
+
+#### Double Layer
+![Hex plot between conductivity and porosity](../_figs/fig_poresize.png){#fig-porosity width=600}
+
+#### CV Response
+![Density and conductivity](../_figs/fig_DensityvCond.png){#fig-density width=600}
+
+:::
+
+:::
+
+:::{#option4Content .content}
+
+![](../_figs/fig_metalsBGvsCond.png){#fig-metalsbgvcond width=800}
+
+:::
+
+:::{#option5Content .content}
+
+![](../_figs/fig_linkersBGvsCondCombined.png){#fig-linkersbgvcond width=800}
+
+:::
+
+:::{#option6Content .content}
+
+
+
+::::{.columns}
+:::{.column}
+
+- Lower band gaps correlate with higher conductivities (expected)
+
+:::
+:::{.column}
+
+![Density plot between bandgaps and conductivity](../_figs/ML.png){#fig-bgbin width=400}
+
+:::
+::::
+
+![](../_figs/div.jpg){.center fig-align="center" width=15%}
+
+::::{.columns}
+:::{.column}
+
+- Conductivity and porosity
+
+:::
+:::{.column}
+![Receiver operator characteristics](../_figs/fig_ROC.png){#fig-porosity width=400}
+
+:::
+::::
+
+![](../_figs/div.jpg){.center fig-align="center" width=15%}
+
+::::{.columns}
+:::{.column}
+
+- Density and porosity
+
+:::
+:::{.column}
+![Confusion matrix](../_figs/fig_confusion.png){#fig-density width=400}
+
+:::
+::::
+
+
+
+
+
+:::
+

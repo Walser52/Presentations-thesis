@@ -1,0 +1,119 @@
+/*.goals{
+  margin: 1em 0;
+  border: 2px solid gray;
+  border-left: 10px solid teal; 
+  border-radius: 10px;
+}
+
+.goals-header {
+  margin-left: 0em;
+  padding-left:  60px;
+  padding-top:  5px;
+  padding-bottom: 0.1em;
+  color: black;
+  background-color: rgb(123, 173, 173);
+  border-top-right-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  background-image: url("goal.png");
+}
+
+.goals-container {
+  padding-top: 5px;
+  padding-left: 10px;
+  color: black;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+}*/
+
+/*dd = Dropdown. Clickable*/
+    .dd {
+      margin: 1em 0;
+      /* border: 2px solid gray; */
+      border-left: 10px solid teal; 
+      border-radius: 10px;
+    }
+
+    .dd-head {
+      margin-left: 0em;
+      padding-left:  60px;
+      padding-top:  5px;
+      padding-bottom: 0.1em;
+      color: black;
+      background-color: rgb(123, 173, 173);
+      border-top-right-radius: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      background-size: 40px;
+      background-repeat: no-repeat;
+      background-position: 15px center;
+      /* background-image: url("goal.png"); */
+      cursor: pointer; /* Add cursor style to indicate it's clickable */
+    }
+
+    .dd-box {
+      padding-top: 5px;
+      padding-left: 10px;
+      color: black;
+      background-color: white;
+      border-bottom-right-radius: 10px;
+      display: none; /* Initially hide the container */
+    }
+
+/*----Dropdown Minimal------*/
+
+    .ddm {
+      margin: 1em 0;
+      /* border: 2px solid gray; */
+      /* border-left: 10px solid teal;  */
+      border-radius: 10px;
+    }
+
+    .ddm-head {
+      margin-left: 0em;
+      padding: 0 0 0 0;
+      color: black;
+      /* background-color: rgb(123, 173, 173);  */
+      border-top-right-radius: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      background-size: 40px;
+      background-repeat: no-repeat;
+      background-position: 15px center;
+      text-align: center;
+      /* background-image: url("goal.png"); */
+      border-bottom: 5px solid red;
+      cursor: pointer; /* Add cursor style to indicate it's clickable */
+    }
+
+    .ddm-box {
+      padding-top: 5px;
+      padding-left: 10px;
+      color: black;
+      background-color: white;
+      border-bottom-right-radius: 10px;
+      display: none; /* Initially hide the container */
+    }
+
+    .lowkey{
+        border-bottom: 3px solid grey;
+    }
+
+
+/*~~~~~~~~~~Example
+
+  <div class="goals">
+    <div class="goals-header" onclick="toggleContainer(this)">Click me to toggle</div>
+    <div class="goals-container">
+      <!-- Content of the container -->
+      <p>Container Content...</p>
+    </div>
+  </div>
+  
+
+~~~~~~~~~~~~*/
+
+

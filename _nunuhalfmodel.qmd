@@ -1,0 +1,235 @@
+:::{.navbar}
+
+[Model]{.nav-option data-option="option21" onclick="showContent(this)"}
+[Why it fails]{.nav-option data-option="option22" onclick="showContent(this)"}
+[Valid Assumptions?]{.nav-option data-option="option23" onclick="showContent(this)"}
+[Extension]{.nav-option data-option="option24" onclick="showContent(this)"}
+[Results]{.nav-option data-option="option25" onclick="showContent(this)"}
+[Error Reduction]{.nav-option data-option="option26" onclick="showContent(this)"}
+[Supplementary]{.nav-option data-option="option27" onclick="showContent(this)"}
+
+:::
+
+
+:::{#option21Content .content}
+
+The standard approach to deconvolution is via the $\nu-\nu^{1/2}$ model carried out on a cyclic voltammetry experiment using a planar electrode assuming semi-infinite planar diffusion. 
+
+The model encodes the current response as a function of the scan rate and the electrode potential.
+
+$$
+I(\nu, V) = \overbrace{k_1 \nu}^{Cap+Pseudo} + \overbrace{k_2\nu^{1/2}}^{Diffusive} +\epsilon
+$${#eq-linearmodel1}
+
+This can then be linearized:
+
+$$
+\frac{I(\nu, V)}{\nu^{1/2}} = k_1 \nu^{1/2} + k_2 +\epsilon
+$${#eq-linearmodel2}
+
+But how good does it fit the experimental data?
+
+:::
+
+:::{#option22Content .content}
+
+::::{.columns}
+:::{.column}
+
+:::{.smaller}
+Attention must be paid to the underlying assumptions before applying the model. 
+
+<blockquote>
+Battery models commonly make  <span style="color:FireBrick">assumptions known to be false,</span> such as describing phase separating materials with Fickian diffusion. 
+
+--[RB Smith](https://dspace.mit.edu/handle/1721.1/111406)
+</blockquote>
+
+:::
+
+:::
+:::{.column}
+
+![](_figs/quad/LinearityMOF.png)
+
+:::
+::::
+
+
+
+
+:::
+
+:::{#option23Content .content}
+
+
+::::{.columns}
+:::{.column}
+
+::::{.ddm}
+:::{.ddm-head onclick="toggleBox(this)"}
+
+Non-linearities
+:::
+:::{.ddm-box}
+
+![Non-linear relationship between the model variables for different materials.](_figs/quad/nonlinearity.png){#fig-nonlinearity width=40%}
+
+:::
+::::
+
+:::
+:::{.column}
+
+::::{.ddm}
+:::{.ddm-head onclick="toggleBox(this)"}
+
+Noise is not random
+:::
+:::{.ddm-box}
+
+![Residual current shows that the noise has a definite structure.](_figs/quad/residualcurrent.png){#fig-nonlinearity width=40%}
+
+:::
+::::
+
+:::
+::::
+
+
+:::
+
+:::{#option24Content .content}
+
+For [reasons](https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202305059) rooted in electrochemistry, we extend the model in the following way:
+
+$$
+I(\nu, V) =  \overbrace{\beta_1 \nu}^{Cap+Pseudo} + \overbrace{\beta_2\nu^{1/2} + \beta_3 \nu^{3/2}}^{Diffusive} + \epsilon
+$${#eq-quadraticmodel1}
+
+Dividing by $\nu^{1/2}$ gives us a model that is quadratic in $\nu^{1/2}$:
+
+$$
+\frac{I(\nu, V)}{\nu^{1/2}} =  \beta_1 \nu^{1/2} + \beta_2 + \beta_3 \nu + \epsilon
+$${#eq-quadraticmodel2}
+
+And it is this model that we will test.
+
+
+::::{.dd }
+:::{.dd-head onclick="toggleBox(this)"}
+
+Derivation
+
+:::
+:::{.dd-box style="font-size:0.75em"}
+
+To rectify this situation we turn to the classic papers by [(Reinmuth, 1962)](https://pubs.acs.org/doi/pdf/10.1021/ac60191a030), and [(Nicholson and Shain, 1964)](https://pubs.acs.org/doi/10.1021/ac60210a007) and we see that for a semi-infinite linear diffusion reaction of the form $O + ne \rightleftharpoons R$ with only O present initially, the diffusion limited current, $i_D$ , has the general form:
+
+$$
+    i_D = \Lambda \sigma^{1/2} \chi(\sigma t)
+$${#eq-idiffusion}
+
+where $\Lambda$ and $\sigma$ are:
+
+\begin{align}
+    \Lambda &= nFAC_O^*(\pi D_O)^{1/2}\\
+    \sigma &= \frac{nF\nu }{RT} 
+\end{align} 
+
+The normalized current $\chi$ can be given the series expansion:
+
+\begin{align}
+    \chi(\sigma t) &= \sum_{j=1}^{\infty} c_j exp{\Biggl[- \frac{jnF}{RT}(E-E_0) \Biggl]}\\
+    &= \sum_{j=1}^{\infty} c_j exp{\Biggl[- \frac{jnF}{RT}E + \frac{jnF}{RT}E_0 \Biggl]}\\
+    &= \sum_{j=1}^{\infty} c_j exp{\Biggl[-\frac{jnF}{RT}(E_i - \nu t) + \frac{jnF}{RT}E_0\Biggl]}\\
+    &= \sum_{j=1}^{\infty} c_j exp{\Biggl[-\frac{jnF}{RT}(E_i - E_0) \Biggl] exp [j\sigma t]}\\
+    &= \sum_{j=1}^{\infty} d_j exp[j \sigma t]\\
+    &= \sum_{j=1}^{\infty} d_j \sum_{n=0}^{\infty} \frac{(j\sigma)^n}{n!}
+    \label{eq-normcurrent}
+\end{align} 
+
+Where the $c_j$ and $d_j$  are expansion coefficients.
+
+Therefore substituting the series expansion for the normalize current into @eq-idiffusion, we see that the diffusion limited current is a function of (2n+1)/2 powers of $\nu$ where $n \in \mathbb{N}$, the set of natural numbers. And the net diffusive current is then:
+:
+$$
+i_D = \Lambda \sum_{j=1}^{\infty} d_j \sum_{n=0}^{\infty} \frac{j^n \sigma^{n+1/2}}{n!}
+$${#eq-idiffusion2}
+
+
+We can now extend the model by adding a diffusive correction from the next order term and thereby get a model that is quadratic in :
+$$
+I(\nu, V) =  \overbrace{\beta_1 \nu}^{Cap+Pseudo} + \overbrace{\beta_2\nu^{1/2} + \beta_3 \nu^{3/2}}^{Diffusive} + \epsilon
+$${#eq-quadmodel2}
+
+$$
+\frac{I(\nu, V)}{\nu^{1/2}} =  {\beta_1 \nu^{1/2}}+ \beta_2 + \beta_3 \nu + \epsilon
+$${#eq-quadmodel}
+
+where $\beta_i$ are the regression parameters; $I$, $V$, and $\nu$ have their usual meanings and $\epsilon$ again is the noise term. Parameters $\beta_2$ and $\beta_3$ correspond to the diffusion limited Faradaic current but the first parameter, $\beta_1$ would encompass the contribution from the Double Layer (DL) as well as the Faradaic, though non-diffusion limited contribution from pseudocapacitive effects.
+
+:::
+::::
+
+
+:::
+
+
+:::{#option25Content .content}
+::: {.r-stack}
+![](_figs/quad/fittedlin.png){width=600}
+
+![](_figs/quad/fittedboth.png){.fragment width=600}
+
+:::
+:::
+
+:::{#option26Content .content}
+
+
+
+::: {layout-ncol=2}
+
+![Root mean square error improvement](_figs/quad/rmse.png){#fig-rmse width=400}
+
+![Boxplots indicate that the predictions of the two models are at times totally at odds.](_figs/quad/boxarrow.png){#fig-boxplots width=800}
+
+:::
+
+
+
+:::
+
+:::{#option27Content .content}
+
+::::{.ddm}
+:::{.ddm-head onclick="toggleBox(this)" style="border-bottom: 3px solid Coral;"}
+
+Fitting for the complete set
+
+:::
+:::{.ddm-box}
+
+![](_figs/quad/FigS2.png)
+
+:::
+::::
+
+
+::::{.ddm}
+:::{.ddm-head onclick="toggleBox(this)" style="border-bottom: 3px solid Coral;"}
+
+Box plots for the complete set
+
+:::
+:::{.ddm-box}
+
+![](_figs/quad/FigS3.png)
+
+:::
+::::
+
+
+
+:::

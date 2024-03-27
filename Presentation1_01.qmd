@@ -1,0 +1,280 @@
+---
+title: "."
+format:
+    revealjs:
+        title-slide-attributes:
+            data-background-image: _figs/treelogo.png
+            data-background-size: 50px
+        width: 1600
+        height: 900
+        margin: 0.1
+        theme: [default, css/style.scss]
+        css: [css/style.css, css/buttons.css, css/tabs.css, css/callouts.css, css/nav.css, css/revealhacks.css]
+        subtitle: ""
+        author: ""
+        toc: FALSE
+        incremental: FALSE
+        slide-number: true
+        # auto-animate-easing: ease-in-out
+        auto-animate-unmatched: false
+        auto-animate-duration: 1.5   
+        transition: convex
+        background-transition: fade
+        logo: _figs/treelogo.png
+        ligthbox: auto
+        engine: jupyter            
+
+include-in-header:
+    file: scripts/scripts.js
+
+editor: source
+---
+
+## {.center}
+
+
+#### PhD Defense 
+
+::::{.columns}
+:::{.column}
+
+
+`r Sys.Date()`
+
+
+**Sheharyar Pervez (ES2033)**
+
+Dr. Zahir Iqbal (Supervisor)
+
+</br> 
+Faculty of Engineering Sciences 
+
+Ghulam Ishaq Khan Institute of Engineering Sciences and Technology
+
+
+:::
+:::{.column}
+ 
+
+
+```{r}
+
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=72.64211517160314, lat=34.06960235636041, popup="Here we are")
+
+```
+
+:::
+::::
+
+
+####
+
+
+
+
+## {.center}
+
+<!-- ![](_figs/treelogo.png){width="1%"} -->
+
+::: columns
+::: {.column .right width="65%"}
+[**DFT, Machine Learning, and Semi-empirical Evaluation of Materials for Energy Storage Devices**]{style="color:teal"}
+
+[PhD Defense]{style="color:gray"}
+:::
+
+::: {.column .left width="35%"}
+**Sheharyar Pervez**
+
+Dr. M. Zahir Iqbal (Supervisor)
+:::
+:::
+
+<!-- <div class="vl"></div> -->
+
+
+## Navigating a forest (an analogy)
+{{< include _forestanalogy.qmd >}}
+
+
+## Two Approaches in Material Design
+
+::::{.columns}
+::: {.column}
+#### Edisonian
+
+Trial and error strategy guided by intuition. 
+
+Has dominated (still does) the identification of materials suitable for a specific application.
+
+
+Edison tried thousands of different materials to find a suitable filament material for his incandescent light bulb.
+
+:::
+::: {.column }
+#### Rational 
+
+Data driven approach that tries to move the trial and error away from the lab.
+
+Couple predictions from advanced computational screening with targeted experimental synthesis and validation.
+
+Find building blocks that lead to properties to derive general design principles.
+
+:::
+::::
+
+Tesla famously dismissed Edison's method as:
+
+<blockquote>
+...inefficient in the extreme...immense ground... to be covered to get anything at all unless blind chance intervened...a little theory and calculation would have saved him 90 per cent of the labour.<sup>&#128481;</sup>
+</blockquote>
+
+
+
+
+# Deconvolution of contributions
+
+## Two modes of energy storage {.scrollable}
+{{< include _modesenergystorage.qmd >}}
+
+
+## {.scrollable}
+{{< include _nunuhalfmodel.qmd >}}
+
+
+# A Different Approach
+
+Phenomenological models have their limitations. How do we get to the point where we know which materials to test?
+
+Density Functional Theory (DFT) and cheminformatics allows us to ask more fundamental questions.
+
+# Metal-Organic Frameworks
+
+## MOFs: Some perspective {.smaller}
+
+::::{.columns}
+:::{.column width=75%}
+
+$$
+\begin{align}
+80^{+}\ &Metals \\
+&+ \\
+1000^+\ &Ligands \\
+&+ \\
+5^+\ Syntehsis&\ Techniques \\
+&= \\
+100,000^+\ Metal-Or&ganic\ Frameworks
+\end{align}
+$$
+
+- Almost half a million publications over the last 30 years (Google scholar🧂)
+- Widely known for their porosity, modularity, crystallinity, and tunability.
+- But not conductivity ... until recently.
+
+:::
+:::{.column width=25%}
+![Some common MOFs](_figs/MOFexamples.png){height=600}
+
+:::
+::::
+
+
+
+
+## Conductive MOFs
+
+
+::: columns
+::: {.column width="50%"} 
+
+Historically regarded as insulators.
+
+Except design strategies exist that can make them conductive.
+
+Applications: 
+
+- Semi-conductive MOFs
+- Electrocatalysis
+- Chemiresistive sensing
+- Ligand design
+- and of course energy storage
+
+:::
+
+::: {.column width="50%"}
+
+:::{.panel-tabset}
+
+#### Transport
+![Transport mechanisms in MOFs. [Xie, Chemical Reviews (2020)]](_figs/chargetransport.gif)
+
+#### Pathways
+![Transport pathways. [Xie, Chemical Reviews (2020)]](_figs/typesofcmofs.gif)
+
+#### Questions
+For use in energy storage materials conductivity is an important metric. We want to:
+
+- Find how to pair metals and ligands so as to achieve high conductivity?
+- Create a mechanism that finds these pairings fast?
+
+
+
+:::
+
+:::
+:::
+
+
+## {.scrollable}
+{{< include _conductivemofs.qmd >}}
+
+
+# Summary {.scrollable}
+The overarching objective was the evaluation of materials for energy storage. 
+
+:::{.panel-tabset}
+## I
+
+The $\nu-\nu^{1/2}$ was providing (in many cases) classifications that were totally incorrect.
+
+This misclassification results in wrong materials being selected.
+
+The quadratic model provides a more accurate deconvolution of the charge storage contributions.
+
+Atomistic calculations are needed however to ask deeper questions. Such as how does one find candidates for energy storage so that they may be synthesized in the lab.
+
+
+## II
+
+DFT calculations and cheminformatic analyses on MOFs help us identify design principles as they manifest themselves through trends in the data. For instance:
+
+- Row 3 and 4 transition metals are more conductive (d-orbitals)
+- Nd tends to outperform others
+- The heavily tested Zn yields insulating behavior
+- Smaller, non-aromatic linkers tend to perform better (at the expense of porosity)
+
+## III
+
+We do this in the hope that it would not only accelerate the discovery of new materials for energy storage but also ensure their accurate classification.
+
+One possible future direction could be to zoom in on the opportunities identified and examine them more closely. 
+
+
+:::
+
+
+
+
+
+
+# Related Publications 
+
+- Pervez, S., Iqbal, MZ. Evaluation of battery-grade alkaline earth metal sulfide electrodes for energy storage applications. Int J Energy Res. 2022; 46(6): 8093-8101. doi:10.1002/er.7712 (IF: 4.672)
+- Pervez, S., Iqbal, M. Z., Capacitive and Diffusive Contributions in Supercapacitors and Batteries: A Critique of b-Value and the ν − ν 1/2 Model. Small 2023, 2305059. doi: 10.1002/smll.202305059 (IF: 13.3)
+- Pervez, S., Iqbal, M. Z., Conducting the Tune of MOFs: Role of Metals and Ligands in Crafting Conductive Metal-Organic Frameworks [Under Review ACS Nano] (IF: 18.027)
+
+## {.center}
+<pre><p style="margin-left: 5em;font-family: GS_L; font-variant: small-caps; font-size:1.5em"><b>The End</pre></b></p></pre>

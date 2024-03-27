@@ -1,0 +1,8 @@
+
+```{python}
+#| echo: true
+
+with open("mofbokeh.py") as f:
+    exec(f.read())
+```
+

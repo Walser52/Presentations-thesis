@@ -1,0 +1,31 @@
+
+:::: {.columns}
+
+::: {.column width=70%}
+
+::: {.incremental}
+
+* The space of materials is huge and charting it can be compared to surveying a forest
+    - The _forest of MOFs_ already numbers in six figures
+* To find a tree that bears a special fruit we can go about in two ways:
+    - Walk through the forest and examine the trees one after another.
+    - Take a bird's eye view of the forest, identify pockets of interest, and then zero in. 
+
+
+:::
+
+:::
+
+::: {.column width=30%}
+
+::: {layout-nrow=2}
+
+![](_figs/ground-forest.jpg){width=400}
+
+![](_figs/aerial-forest.jpg){.fragment width=400}
+
+:::
+
+:::
+
+::::

@@ -1,0 +1,156 @@
+
+
+:::{.navbar}
+
+[The Two Modes]{.nav-option data-option="option11" onclick="showContent(this)"}
+[CV Responses]{.nav-option data-option="option12" onclick="showContent(this)"}
+[Flowchart]{.nav-option data-option="option13" onclick="showContent(this)"}
+[But...]{.nav-option data-option="option14" onclick="showContent(this)"}
+
+:::
+
+:::{#option11Content .content .scrollable}
+
+::::{.columns}
+:::{.column width=16%} 
+
+:::: {.ddm style="font-size:0.63em; line-height:0"}
+:::{.ddm-head onclick="toggleBox(this)" style="border-bottom: 5px solid LightGray;font-family:GS_C-B"}
+
+Capacitive
+
+:::
+:::{.ddm-box style="font-family:GS_L"}
+
+No charge transfer
+
+Helmholtz Double layer
+
+Electrostatic
+
+Fast
+
+Reversible
+
+Rectangular CV
+
+Triangular GCD
+
+:::
+::::
+
+:::
+:::{.column width=68%}
+
+![Classical capacitive and diffusive modes of energy storage.](_figs/capdiffclassical.png){#fig-schema width=90% fig-align="center"}
+
+:::
+
+
+:::{.column width=16%} 
+
+:::: {.ddm style="font-size:0.63em; font-family:Ubuntu Mono; line-height:0; margin-bottom: 0px; margin-top: 0px"}
+:::{.ddm-head onclick="toggleBox(this)" style="border-bottom: 5px solid LightGray;font-family:GS_C-B"}
+
+Diffusive
+
+:::
+:::{.ddm-box style="font-family:GS_L"}
+
+Charge transfer
+
+Redox reactions
+
+Diffusion limited
+
+Slow
+
+Contains irreversibilities
+
+Peaks in CV
+
+Plateaus in GCD
+
+:::
+::::
+
+
+:::
+
+::::
+
+:::
+:::{#option12Content .content .scrollable}
+
+::::{.columns}
+:::{.column width=20%}
+
+![](_figs/CV.png){fig-align="center"}
+
+
+:::
+:::{.column width=60%}
+
+:::{.panel-tabset}
+### Schema
+![CV Responses for EDLCs, batteries and pseudocapacitors.](_figs/super-batt-pseud-cv-gcd.png){#fig-schema fig-align="center"}
+
+### Experimental
+![Some experimental CV responses.](_figs/CVs.png){#fig-schema fig-align="center"}
+:::
+
+:::
+::::
+
+
+
+
+
+:::
+
+:::{#option13Content .content .scrollable}
+![General scheme of electrochemical contributions.](_figs/flowchart.png){#fig-schema width=90% fig-align="center"}
+
+:::
+
+:::{#option14Content .content .scrollable}
+
+The picture gets muddled as you introduce nanostructuring. Particle sizes are smaller than diffusion lengths all three effects are potentially occurring at the same time.
+
+::::{.columns}
+:::{.column}
+
+<blockquote>
+<span style="color:DimGray; font-size:0.65em; line-height: 0">
+...increasing numbers of new electrode materials... display electrochemical characteristics that are <span style="color:FireBrick"> neither purely capacitive nor purely Faradaic.</span> [These] new materials [have]... [blurred]... the distinctions between these two fundamentally different energy-storage</br></br>-- Yuri Gogotsi (ACS Nano, 2018)
+</span>
+</blockquote>
+
+:::
+:::{.column}
+
+<blockquote>
+<span style="color:DimGray; font-size:0.65em; line-height: 0">
+Increasingly, the  <span style="color:FireBrick">distinction...is blurred,</span> particularly with the use of
+nanostructured materials whose particle sizes are much smaller
+than the diffusion length or carbons with redox-active functional
+groups. </br></br></br>- Fleischmann (Chemical Reviews, 2020)
+</span>
+</blockquote>
+
+
+:::
+::::
+
+
+
+
+:::
+
+
+
+
+
+
+
+

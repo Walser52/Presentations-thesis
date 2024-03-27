@@ -1,0 +1,171 @@
+:::{.navbar}
+
+[Workflow]{.nav-option data-option="option31" onclick="showContent(this)"}
+[DFT results]{.nav-option data-option="option32" onclick="showContent(this)"}
+[Trends]{.nav-option data-option="option33" onclick="showContent(this)"}
+[Metal analysis]{.nav-option data-option="option34" onclick="showContent(this)"}
+[Linker analysis]{.nav-option data-option="option35" onclick="showContent(this)"}
+[ML model]{.nav-option data-option="option36" onclick="showContent(this)"}
+[Pairings]{.nav-option data-option="option37" onclick="showContent(this)"}
+
+:::
+
+
+:::{#option31Content .content}
+
+::::{.columns}
+:::{.column}
+
+- 8,500 materials 
+- DFT calculations using Quantum Espresso
+- Cheminformatic libraries (RDKit, pymatgen, matminer)
+
+:::
+:::{.column}
+
+![The complete workflow](_figs/workflow2.png){#fig-workflow width=650}
+
+:::
+::::
+
+
+:::
+
+:::{#option32Content .content}
+
+::::{.columns}
+:::{.column}
+
+- Conductivity of MOFs reveals a bimodal distribution (Top) 
+- Gaussian mixture model used to fit the data (Bottom) 
+- Bimodality partly due to open shells (Inset)
+
+:::
+:::{.column}
+
+![Results of DFT calculations](_figs/fig_CondResults.png){#fig-condres width=700}
+
+:::
+::::
+
+
+:::
+
+:::{#option33Content .content}
+
+
+::: {.panel-tabset}
+#### Bandgap
+![Density plot between bandgaps and conductivity](_figs/fig_bandgap_v_condbin.png){#fig-bgbin width=600}
+
+#### LCD
+![Hex plot between conductivity and porosity](_figs/fig_poresize.png){#fig-porosity width=600}
+
+#### Density
+![Density and conductivity](_figs/fig_DensityvCond.png){#fig-density width=600}
+
+:::
+
+:::
+
+:::{#option34Content .content}
+
+
+
+::: {.panel-tabset}
+
+#### Metal 
+::::{.columns}
+:::{.column width=35%}
+Stratifying different variables by metals shows which ones perform better.
+
+<!-- ![](_figs/NdvCo.png) -->
+
+:::
+:::{.column width=65%}
+
+ <iframe width="800" height="800" src="_bokeh.html" title=""></iframe> 
+<!--  
+{python}
+with open("mofbokeh.py") as f:
+    exec(f.read())-->
+
+
+:::
+::::
+
+
+
+
+#### Bandgap 
+![Bandgap vs. conductivity aggregated. Only metals with a frequency of more than 30 are shown. Marker size is a product of the number of valence electrons and the mean of common oxidation states.](_figs/fig_metalsBGvsCond.png){#fig-metalsbgvcond width=700}
+
+#### Periodic Table
+![Heat map of log conductivity on the periodic table shows row 3 and 4 transition metals generally outperform others.](_figs/fig_metalsperiodic.png){#fig-bgbin width=800}
+
+:::
+
+
+:::
+
+:::{#option35Content .content}
+
+::: {.panel-tabset}
+
+#### Most common 
+[Table 1: Mean LCD, bandgap, and conductivity values for some of the commonly used linkers in the database. The last column shows the relative frequency of each linker in the high vs. low dataset.]{style="font-size: 65%;"}
+
+![](_figs/TableLinkers.png){width=1000 fig-align="center"}
+
+
+#### LCD  
+![Most common linkers grouped by conductivity and Largest Cavity Diameter (LCD)](_figs/fig_linkersBGvsCondCombined.png){#fig-linkersbgvcond width=800}
+
+:::
+
+:::
+
+:::{#option36Content .content}
+
+::: {.panel-tabset}
+
+#### Featurizers
+
+- Crystal NN
+- Morgan fingerprint
+- Bond orientational parameter
+- Intermetallic distance
+- One Hot Encoding 
+
+#### Model 
+![Density plot between bandgaps and conductivity](_figs/ML.png){#fig-bgbin width=800}
+
+
+#### ROC  
+![Receiver operator characteristics](_figs/fig_ROC.png){#fig-porosity width=600}
+
+#### Confusion Matrix
+![Confusion matrix](_figs/fig_confusion.png){#fig-density width=600}
+
+:::
+
+:::
+
+:::{#option37Content .content}
+
+You can now go to the lab with some idea of what to expect. We know what opportunities we have, where research is lacking and where we can contribute.
+
+[Table 2: Mean log conductivity for common metals and linkers pairings with number of samples indicated inside parentheses.]{style="font-size: 65%;"}
+
+![](_figs/TableMetalligandpairings.png){width=1400 fig-align="center"}
+
+:::{.callout-caution}
+There are no absolute answers here. Metal X is not better than Metal Y. 
+
+What we have before us are trends. 
+
+Engineering the right material for a problem is about deciding what tradeoffs you want. 
+:::
+
+:::
+
